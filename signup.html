@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Sign Up Form</title>
+        <link rel="stylesheet" href="style1.css">     
+    </head>
+    <body style="background-image: url('/images/hero-bg.jpg');background-size: cover">
+       <div class="main-wrap">
+           <div class="form-wrap">
+               <h1>SIGN <span>UP</span></h1>
+               <form class="form">
+                <input type="string" name="name" id="name" placeholder="Name" required>
+                    </br>
+                   <input type="email" name="email" id="email" placeholder="Email" required>
+                    </br>
+                    <input type="number" name="phone" id="phone" placeholder="Mobile Number" required >
+                    </br>
+                   <input type="password" name="pass" id="pass" placeholder="Password" required onclick="verify()">
+                    </br>
+                    <input type="password" name="cpass" id="cpass" placeholder="Confirm Password" required>
+                    </br>
+                   <button type="submit"  class="form-btn">SIGN UP</button>
+               </form>
+               <span class="sign-up-with">Or sign up with</span>
+               <div class="social-logo">
+                    <a href="#" title="Facebook">
+                        <img src="images/fb.png" alt="Facebook">
+                    </a>
+                    <a href="#" title="Google">
+                        <img src="images/google.png" alt="Google">
+                    </a>
+                    <a href="#" title="Twitter">
+                        <img src="images/twitter.png" alt="Twitter">
+                    </a>
+               </div>
+               <br>
+               <div style="color: #9c4600">Already have an account? <a href="index.html" style="color: #194d53">Login In</a></div>
+           </div>
+       </div>
+    </body>
+    <script>
+        function phonenumber(inputtxt)
+            {
+            var phoneno = /^\d{10}$/;
+            if(inputtxt.match(phoneno)) 
+                return true; 
+            else  
+                return false;        
+            }
+        function verify(){
+            if(phonenumber(document.getElementById('phone').value))
+            {
+                return true;
+            }
+            else{
+                alert("Phone Number must be 10 digits!");
+            }
+        }
+        
+    </script>
+</html>
